@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
-    "test": "jest --watchAll",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
     "lint": "eslint .",
     "format": "prettier --write .",
     "migrate": "knex migrate:latest"
