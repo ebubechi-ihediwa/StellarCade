@@ -1,6 +1,6 @@
 /**
  * Base model for Users.
- * 
+ *
  * Provides an interface for user-related database operations.
  */
 const db = require('../config/database');
@@ -9,7 +9,7 @@ const logger = require('../utils/logger');
 const User = {
   /**
    * Find a user by their Stellar wallet address.
-   * @param {string} address 
+   * @param {string} address
    */
   async findByWallet(address) {
     try {
@@ -22,7 +22,7 @@ const User = {
 
   /**
    * Create a new user profile.
-   * @param {object} userData 
+   * @param {object} userData
    */
   async create(userData) {
     try {
@@ -35,7 +35,7 @@ const User = {
 
   /**
    * Get the current balance of a user.
-   * @param {number} userId 
+   * @param {number} userId
    */
   async getBalance(userId) {
     try {
@@ -45,7 +45,7 @@ const User = {
       logger.error('Error in User.getBalance:', error);
       throw error;
     }
-  }
+  },
 };
 
 module.exports = User;

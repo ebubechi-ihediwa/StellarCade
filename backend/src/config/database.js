@@ -15,7 +15,7 @@ const db = knex({
 
 db.raw('SELECT 1')
   .then(() => logger.info('PostgreSQL connected successfully'))
-  .catch(err => {
+  .catch((err) => {
     logger.error('PostgreSQL connection failed:', err);
     process.exit(1);
   });

@@ -22,7 +22,7 @@ const getContractClient = (contractId) => {
       logger.info(`Invoking ${method} on ${contractId}`);
       // Mock result
       return { status: 'pending' };
-    }
+    },
   };
 };
 

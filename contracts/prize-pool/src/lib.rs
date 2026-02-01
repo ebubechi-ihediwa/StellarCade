@@ -1,5 +1,5 @@
 //! Stellarcade Prize Pool Contract
-//! 
+//!
 //! This contract manages user balances, platform fees, and prize distributions.
 #![no_std]
 

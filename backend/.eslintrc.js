@@ -13,7 +13,7 @@ module.exports = {
     'no-console': 'warn',
     'no-unused-vars': 'error',
     'no-undef': 'error',
-    'semi': ['error', 'always'],
-    'quotes': ['error', 'single'],
+    semi: ['error', 'always'],
+    quotes: ['error', 'single'],
   },
 };

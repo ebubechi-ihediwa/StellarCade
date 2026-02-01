@@ -1,0 +1,32 @@
+#!/bin/bash
+# Pre-Push Hook for Stellarcade
+# Ensures the project builds and tests pass before pushing to the remote.
+
+set -e
+
+echo "🚀 Running pre-push verification (Build & Test)..."
+
+# 1. Build and Test Rust Contracts
+echo "🦀 Verifying Rust contracts..."
+if command -v cargo >/dev/null 2>&1; then
+    # We use 'check' for speed on push, 'build --release' is left for CI
+    # But as per user request, we run a full check/test
+    cd contracts/shared && cargo check && cd ../..
+    cd contracts/prize-pool && cargo check && cargo test && cd ../..
+    cd contracts/random-generator && cargo check && cargo test && cd ../..
+    cd contracts/coin-flip && cargo check && cargo test && cd ../..
+else
+    echo "⚠️ Cargo not found, skipping Rust verification."
+fi
+
+# 2. Build and Test Backend
+echo "📦 Verifying backend..."
+if command -v npm >/dev/null 2>&1; then
+    cd backend
+    npm test || { echo "❌ Backend tests failed! Push aborted."; exit 1; }
+    cd ..
+else
+    echo "⚠️ NPM not found, skipping backend verification."
+fi
+
+echo "✨ All checks passed! Proceeding with push."

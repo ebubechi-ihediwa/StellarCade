@@ -1,9 +1,9 @@
 //! Stellarcade Coin Flip Contract
-//! 
+//!
 //! Implements the classic 50/50 game logic.
 #![no_std]
 
-use soroban_sdk::{contract, contractimpl, Address, Env, BytesN};
+use soroban_sdk::{contract, contractimpl, Address, BytesN, Env};
 
 #[contract]
 pub struct CoinFlip;

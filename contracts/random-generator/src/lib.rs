@@ -1,9 +1,9 @@
 //! Stellarcade Random Number Generator Contract
-//! 
+//!
 //! Provides provably fair randomness for games.
 #![no_std]
 
-use soroban_sdk::{contract, contractimpl, BytesN, Env, Address};
+use soroban_sdk::{contract, contractimpl, Address, BytesN, Env};
 
 #[contract]
 pub struct RandomGenerator;

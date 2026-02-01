@@ -5,7 +5,7 @@ const logger = require('./logger');
 
 /**
  * Validates a Stellar public key (G... address).
- * @param {string} address 
+ * @param {string} address
  * @returns {boolean}
  */
 const isValidStellarAddress = (address) => {
